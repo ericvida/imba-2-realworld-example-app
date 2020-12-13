@@ -1,3 +1,4 @@
+# TODO: FULL ARTICLE PAGE with comment box
 <div class="article-page">
 
   <div class="banner">

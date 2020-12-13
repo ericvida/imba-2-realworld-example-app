@@ -31,7 +31,7 @@ tag MyArticles
 					<.readmore> "Read more..."	
 					<.clear-tags>
 						for items in ["javascript", "imba", "vue", "react"]
-							<span> items	
+							<span> items
 
 tag FeedToggles
 	css .nav d:flex bdb:1px solid gray3

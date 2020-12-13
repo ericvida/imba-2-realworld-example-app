@@ -1,5 +1,5 @@
 import './Page'
-tag ArticlePreview
+tag ArticleList
 	css .article-preview mb:1em bdb:1px solid gray3 pb:6 pt:4
 	css .article-meta d:flex ai:flex-start py:2
 		img rd:50% mr:2 h:2em
@@ -9,6 +9,10 @@ tag ArticlePreview
 		.date fs:.8em c:gray4 h:.9em
 	css .preview-link
 		p mb: 15px
+	css .bottom d:flex jc:space-between ai:center ac:center
+	css .readmore fs:.8em c:gray4
+	css .clear-tags
+		span c:gray5 ml:1 fw:100 fs:.8rem px:1 pb:3px px:3 bd:1px solid gray3 rd:full
 	def render
 		<self>
 			<div .article-preview> 
@@ -30,17 +34,16 @@ tag ArticlePreview
 							<span> items
 
 
-tag FeedToggle
+tag FeedToggles
+	css .nav d:flex bdb:1px solid gray3
+		.nav-link mr:1 pb:9px px:3 mb:-1px c:gray5
+			&.active bdb:2px solid $brand-color c: $brand-color
+			&.disabled d:none
 	def render
 		<self>
 			<div.nav>
-				<a.nav-link.disabled href=""> "Your Feed"
+				<a.nav-link href=""> "Your Feed"
 				<a.nav-link.active href=""> "Global Feed"
-
-	css .nav d:flex bdb:1px solid gray3
-		.nav-link mr:1 pb:9px px:3 mb:-1px
-			&.active bdb:2px solid $brand-color
-			&.disabled d:none
 tag TagBox
 	css & bg:$brand-gray p:2 rd:2 d:block
 		.tag-list pt:2
@@ -59,11 +62,11 @@ tag GlobalFeed
 	def render
 		<self>
 			<.feed>
-				<feed-toggle>
+				<FeedToggles>
 				for item in [0 ... 5]
-					<ArticlePreview>
+					<ArticleList>
 			<.sidebar>
-				<tag-box tags=tags>
+				<TagBox tags=tags>
 				
 export tag Home < Page
 	def render

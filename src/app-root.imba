@@ -26,15 +26,17 @@ tag nav-link < a
 	def render
 		<self .active=active route-to=to> <slot>
 
-
 tag app-root < PagePrototype
 	prop auth = true
+	css & pb:100px d:block pos:relative
 	css header bg:white py:2
 		> .container d:flex jc: space-between ai:center
 	css .imbalogo ff:titillium web, sans-serif fs:1.5rem td:none
 	css nav > a px:2 c:gray6 @hover:gray9 td:none
-	css &
-		pb:100px d:block pos:relative
+	css .container
+		max-width: $global-width mx:auto
+	css .narrow-container
+		max-width: 450px mx:auto
 	css footer
 		bg:gray9 c:white p:2 fs:.8rem pos:fixed w:100% b:0
 	def render
@@ -54,13 +56,15 @@ tag app-root < PagePrototype
 						# TODO: route to "/profile"+encode(currentUser:username)
 						<a route-to="/profile"> "Eric Simons" # currentUsername
 			<HomeBanner route='/home' auth=auth>
-			<Home route='/home' auth=auth>
-			<SignIn route='/SignIn'>
-			<SignUp route='/SignUp'>
-			<Editor route='/editor-new'>
-			<Settings route='/settings'>
 			<ProfileBanner route='/profile'>
-			<Profile route='/profile'>
+			<.container>
+				<Home route='/home' auth=auth>
+				<Settings route='/settings'>
+			<.narrow-container>
+				<Profile route='/profile'>
+				<SignIn route='/SignIn'>
+				<SignUp route='/SignUp'>
+				<Editor route='/editor-new'>
 			<footer>
 				<Row>
 					<Logo>

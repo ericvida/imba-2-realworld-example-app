@@ -24,7 +24,7 @@ global css html
 # CUSTOM
 global css html
 	* ff: "Source Sans Pro", sans-serif
-	$global-width: 800px
+	$global-width: 750px @lg:900px
 	$brand-color: hsl(120, 39%, 54%)
 	$brand-color-shade: hsl(120, 39%, 44%)
 	$brand-gray: hsl(109, 0%, 95%)
