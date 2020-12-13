@@ -27,6 +27,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "imba": "^2.0.0-alpha.100",
+    "lodash": "^4.17.20",
+    "pro-router": "^4.3.2",
     "webpack": "^4.44.1",
     "webpack-dev-server": "^3.11.0"
   },

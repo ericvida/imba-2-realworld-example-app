@@ -1,3 +1,3 @@
-import './components/app-root'
+import './app-root'
 
 imba.mount <app-root>

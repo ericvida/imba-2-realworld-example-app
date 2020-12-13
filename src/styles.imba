@@ -1,24 +1,38 @@
-# including some global styles here
+# RESET
 global css html
-	w:100% h:100% m:0 ff:sans
-
+	w:100% h:100% m:0
+	box-sizing: border-box;
+	font-size: 16px;
 	body w:100% h:100% m:0
+	*
+		box-sizing: border-box
+		padding-inline-end: 0
+		padding-inline-start: 0
 
-	button -webkit-appearance: none
-		bg:blue5 @hover:blue6
-		fs:sm c:white
-		d:flex ja:center
-		px:4 py:2 rd:sm bd:0px
-		mx:2 fl:0 0 auto
+	*, *:before, *:after 
+		box-sizing: inherit;
 
-	header
-		flex: 0 0 auto
-		display: hflex
-		justify-content: flex-start
-		align-items: stretch
-		padding: 10px 6px
-		background: #e8e8e8
+	body, h1, h2, h3, h4, h5, h6, p, ol, ul
+		margin: 0;
+		padding: 0;
+		font-weight: normal;
 
-	input d:block px:4 bg:transparent
-		bd:none fs:inherit w:50px
-		fl:1 1 auto
+	img
+		max-width: 100%;
+		height: auto;
+
+# CUSTOM
+global css html
+	* ff: "Source Sans Pro", sans-serif
+	$global-width: 800px
+	$brand-color: hsl(120, 39%, 54%)
+	$brand-color-shade: hsl(120, 39%, 44%)
+	$brand-gray: hsl(109, 0%, 95%)
+	a
+		c:$brand-color
+		td:none
+		h1
+			c:gray9 fw:600
+		p c:gray6
+	input, textarea
+		fs: 1.25rem c:gray7

@@ -1,4 +1,7 @@
-tag shared-methods
+import './Page'
+import {User} from '../classes/user'
+import { formatDate, encode, api } from '../functions/util'
+tag PagePrototype
 	prop currentUser
 	prop headers
 	def setup
