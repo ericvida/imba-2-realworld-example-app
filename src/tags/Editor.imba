@@ -4,6 +4,7 @@ export tag Editor < Page
 		--box-shadow-ring: 0 0 0 1px gray4
 		d:block p:3
 	css .container pt:4 pb:2 d:flex
+		h1 fs:2.5rem
 	css form max-width: 100% mx:auto d:flex fld:column
 	css input, textarea bd:1px solid gray4 py:3 px:5 bxs:ring bd:none rd:1 fs:1rem .lg:1.25rem w:100%
 	css .buttons
@@ -12,6 +13,8 @@ export tag Editor < Page
 			&.delete c:gray4 @hover:white bg:gray1 @hover:red4 as:flex-start px:6
 	def render
 		<self>
+			<.container>
+				<h1[ta:center w:100%]> "Write a New Article"
 			<form @submit.prevent.login>
 				<fieldset>
 					<input.lg type="text" placeholder="Article Title">

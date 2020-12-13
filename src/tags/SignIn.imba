@@ -13,7 +13,7 @@ export tag SignIn < Page
 	def render
 		<self>
 			<.container>
-				<h1> "Sign in"
+				<h1> "Sign In"
 				<p>
 					<a route-to='/SignUp'> "Need an account?"
 			if errors
