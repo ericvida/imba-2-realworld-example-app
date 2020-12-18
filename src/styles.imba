@@ -20,9 +20,13 @@ global css html
 	img
 		max-width: 100%;
 		height: auto;
+	svg
+		fill:currentColor
+		w:1rem d:block
 
 # CUSTOM
-global css html
+global css @root
+	1column: calc(100% / 12)
 	* ff: "Source Sans Pro", sans-serif
 	$global-width: 750px @lg:900px
 	$brand-color: hsl(120, 39%, 54%)
