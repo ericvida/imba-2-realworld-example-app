@@ -2,18 +2,17 @@ import 'imba/router'
 
 import './tags/PagePrototype'
 import './styles'
-import {Row} from './styled-components'
 import {Logo} from './tags/Logo'
-import {Home} from './tags/Home'
-import {HomeBanner} from './tags/HomeBanner'
-import {SignIn} from './tags/SignIn'
-import {SignUp} from './tags/SignUp'
-import {Editor} from './tags/Editor'
-import {Settings} from './tags/Settings'
-import {Profile} from './tags/Profile'
-import {ProfileBanner} from './tags/ProfileBanner'
-import {Article} from './tags/Article'
-import {ArticleBanner} from './tags/ArticleBanner'
+import {Home} from './tags/PageHome'
+import {HomeBanner} from './tags/PageHomeBanner'
+import {SignIn} from './tags/TheSignIn'
+import {SignUp} from './tags/TheSignUp'
+import {Editor} from './tags/PageEditor'
+import {Settings} from './tags/PageSettings'
+import {Profile} from './tags/PageProfile'
+import {ProfileBanner} from './tags/PageProfileBanner'
+import {Article} from './tags/PageArticle'
+import {ArticleBanner} from './tags/PageArticleBanner'
 import './functions/util'
 
 tag nav-link < a
@@ -25,7 +24,7 @@ tag nav-link < a
 		<self .active=active route-to=to> <slot>
 
 tag Container
-	css & w:12column @md:10column @lg: 8column mx:auto d:block px:4
+	css & w:12column @md:10column @lg:8column mx:auto d:block px:4
 	css &.narrow w:12column @sm:10column @md:8column @lg: 6column mx:auto d:block px:4
 	def render
 		<self>
@@ -39,7 +38,7 @@ tag app-root < PagePrototype
 	css nav px:2 d:flex ai:center
 		a pr:4 @last:0 c:gray6 @hover:gray9 td:none d:flex ai:centerz
 	css footer
-		bg:gray9 c:white p:2 fs:.8rem pos:fixed w:100% b:0
+		bg:gray9 c:white p:2 fs:.8rem pos:fixed w:100% b:0 pb:6
 	def render
 		<self>
 			<Container>
@@ -62,11 +61,15 @@ tag app-root < PagePrototype
 						# TODO: route to "/profile"+encode(currentUser:username)
 						<a route-to="/profile"> "Eric Vida" # currentUsername
 						<a route-to="/article"> "Article" # currentUsername
-			<HomeBanner route='/home' auth=auth>
-			<ProfileBanner route='/profile'>
-			<div[bg:hsl(109, 0%, 20%) w:100% d:block py:9]>
+			<[bg:$brand-color bxs:inset 0px 10px 20px -10px black/20, inset 0px -10px 20px -10px black/20] route='/home'>
 				<Container>
-					<ArticleBanner route='/article'>
+					<HomeBanner auth=auth>
+			<[bg:hsl(109, 0%, 95%) py:25px max-width:100% d:block] route='/profile'>
+				<Container>
+					<ProfileBanner route='/profile'>
+			<[bg:hsl(109, 0%, 20%) w:100% d:block py:9] route='/article'>
+				<Container>
+					<ArticleBanner>
 			<Container>
 				<Home route='/home' auth=auth>
 				<Profile route='/profile'>
@@ -77,7 +80,7 @@ tag app-root < PagePrototype
 				<SignUp route='/SignUp'>
 				<Editor route='/editor-new'>
 			<footer>
-				<Row>
+				<Container>
 					<Logo>
 					<div> "An interactive learning project from {<a href="https://thinkster.io"> "Thinkster"}. "
 						<span[d@lt-sm:block]> "Code & Design licensed under MIT."

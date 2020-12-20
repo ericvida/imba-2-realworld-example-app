@@ -8,7 +8,7 @@ tag ArticleActions
 		a fs:1rem c:gray2 fw:bold
 		span fs:.8rem fw:300 c:gray5
 	
-	css .article-actions d:flex h:2rem
+	css .article-actions d:flex min-height:2rem
 		a d:flex ai:center px:2 font-style:normal bg:none @hover: gray3 bd:1px solid gray4 rd:2 ml@last:1 bd: 1px solid gray5 c:gray5 @hover: gray9
 		a.brand
 			bd: 1px solid $brand-color c:$brand-color @hover:white bg@hover: $brand-color
@@ -36,5 +36,5 @@ export tag ArticleBanner
 		<self>
 			<.container>
 				<h1> "Article Title"
-				<ArticleActions[w:12column @md:10column @xl: 8column]>
+				<ArticleActions[w:12column]>
 				

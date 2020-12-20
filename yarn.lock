@@ -2125,7 +2125,7 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.20:
+lodash@^4.17.11, lodash@^4.17.14:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -2712,11 +2712,6 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
-
-pro-router@^4.3.2:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/pro-router/-/pro-router-4.3.2.tgz#887cd35d5d2d6f293fa3e16e93a2c67bdb896beb"
-  integrity sha512-S1qvuUwg5dLegfMIt3tFxW2jMhMFgZP0YqoHLdOlggrQYIhbzgpzUsoKqQ6kQ6vRD3kiS+H6NaQt/Ve0fpm4yQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
